@@ -4,6 +4,7 @@ title              = "Notes about programming"
 theme              = "hugo-theme-bleak"
 PygmentsCodeFences = true
 publishDir         = "docs"
+comments = true
 
 [params]
   # Warning Keys are case sensitives

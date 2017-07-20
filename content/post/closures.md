@@ -3,6 +3,7 @@ title: "Closures"
 date: 2017-07-20T12:18:25+02:00
 description: "Examples in ruby and javascript"
 draft: false
+comments: true
 ---
 
 ## Ruby
