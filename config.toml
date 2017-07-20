@@ -1,4 +1,4 @@
-baseURL            = "github.com/benjamin-thomas/blog"
+baseURL            = "github.com/benjamin-thomas/blog/"
 languageCode       = "en-us"
 title              = "Notes about programming"
 theme              = "hugo-theme-bleak"
