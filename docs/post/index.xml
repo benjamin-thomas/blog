@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Notes about programming</title>
-    <link>/blog/post/</link>
+    <link>https://benjamin-thomas.github.io/blog/post/</link>
     <description>Recent content in Posts on Notes about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Jul 2017 13:28:46 +0200</lastBuildDate>
     
-	<atom:link href="/blog/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://benjamin-thomas.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Currying</title>
-      <link>/blog/post/currying/</link>
+      <link>https://benjamin-thomas.github.io/blog/post/currying/</link>
       <pubDate>Thu, 20 Jul 2017 13:28:46 +0200</pubDate>
       
-      <guid>/blog/post/currying/</guid>
+      <guid>https://benjamin-thomas.github.io/blog/post/currying/</guid>
       <description>Ruby # First method, define as a usual method, and convert to a lambda as needed def mult(a,b) a * b end mult(3,4) # =&amp;gt; 12 method(:mult). # returns a `Method` object, which behaves as a Proc (lambda) .call(3,4) method(:mult) .curry # returns the same Proc (lambda), and allows next partial application .call(3) # apply the first partial transform thirds = method(:mult).curry.(3) thirds.(4) # =&amp;gt; 12 def mult2(a) #test lambda do |b| a * b end end # Second, more traditional method thirds2 = mult2(3) thirds2.</description>
     </item>
     
     <item>
       <title>Closures</title>
-      <link>/blog/post/closures/</link>
+      <link>https://benjamin-thomas.github.io/blog/post/closures/</link>
       <pubDate>Thu, 20 Jul 2017 12:18:25 +0200</pubDate>
       
-      <guid>/blog/post/closures/</guid>
+      <guid>https://benjamin-thomas.github.io/blog/post/closures/</guid>
       <description> Ruby def cycle(collection) index = -1 lambda do index += 1 collection[index % collection.size] end end c = cycle([&amp;#39;red&amp;#39;, &amp;#39;green&amp;#39;, &amp;#39;blue&amp;#39;]) 4.times.map do c.call end # =&amp;gt; =&amp;gt; [&amp;quot;red&amp;quot;, &amp;quot;green&amp;quot;, &amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;]  Javascript function cycle(coll) { var idx = -1; return function() { idx += 1; return coll[idx % coll.length]; } } c = cycle([&amp;#39;red&amp;#39;, &amp;#39;green&amp;#39;, &amp;#39;blue&amp;#39;]) Array(4).fill(null).map(function() { return c(); }) // =&amp;gt; [&amp;quot;red&amp;quot;, &amp;quot;green&amp;quot;, &amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;]  </description>
     </item>
     
