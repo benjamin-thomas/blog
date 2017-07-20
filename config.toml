@@ -3,4 +3,4 @@ languageCode       = "en-us"
 title              = "Notes about programming"
 theme              = "hugo-theme-bleak"
 PygmentsCodeFences = true
-publishDir         = "docs"
+publishDir         = "../benjamin-thomas.github.io/"
