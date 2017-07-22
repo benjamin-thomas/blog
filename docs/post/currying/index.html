@@ -94,7 +94,7 @@
         },
         "datePublished": "2017-07-20",
         "dateModified": "2017-07-20",
-        "wordCount": 110,
+        "wordCount": 117,
         
     }
     </script>
@@ -156,7 +156,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">20 Jul 2017</span> <span class="reading-time">| <span class="estimated-reading-time">1 min.</span> (<span class="word-count">110</span> words)</span></span>
+						<span class="post-date">20 Jul 2017</span> <span class="reading-time">| <span class="estimated-reading-time">1 min.</span> (<span class="word-count">117</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Currying</h1>
@@ -166,34 +166,38 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
   				
 
 <h2 id="ruby">Ruby</h2>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e"># First method, define as a usual method, and convert to a lambda as needed</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e"># =============================================================================</span>
+<span style="color: #75715e"># First technique: define as a usual method, then convert to a lambda as needed</span>
+<span style="color: #75715e"># =============================================================================</span>
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">mult</span><span style="color: #f8f8f2">(a,b)</span>
   <span style="color: #f8f8f2">a</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">b</span>
 <span style="color: #66d9ef">end</span>
 
-<span style="color: #f8f8f2">mult(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># =&gt; 12</span>
+<span style="color: #f8f8f2">mult(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span>       <span style="color: #75715e"># =&gt; 12</span>
 
-<span style="color: #f8f8f2">method(</span><span style="color: #e6db74">:mult</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">.</span> <span style="color: #75715e"># returns a `Method` object, which behaves as a Proc (lambda)</span>
+<span style="color: #f8f8f2">method(</span><span style="color: #e6db74">:mult</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">.</span>  <span style="color: #75715e"># returns a `Method` object, which behaves as a Proc (lambda)</span>
   <span style="color: #f92672">.</span><span style="color: #f8f8f2">call(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #f8f8f2">method(</span><span style="color: #e6db74">:mult</span><span style="color: #f8f8f2">)</span>
-  <span style="color: #f92672">.</span><span style="color: #f8f8f2">curry</span> <span style="color: #75715e"># returns the same Proc (lambda), and allows next partial application</span>
-  <span style="color: #f92672">.</span><span style="color: #f8f8f2">call(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># apply the first partial transform</span>
+  <span style="color: #f92672">.</span><span style="color: #f8f8f2">curry</span>        <span style="color: #75715e"># returns the same Proc (lambda), and allows next partial application</span>
+  <span style="color: #f92672">.</span><span style="color: #f8f8f2">call(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>      <span style="color: #75715e"># apply the first partial transform</span>
 
-<span style="color: #f8f8f2">thirds</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">method(</span><span style="color: #e6db74">:mult</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">curry</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>
-<span style="color: #f8f8f2">thirds</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># =&gt; 12</span>
+<span style="color: #f8f8f2">three_times</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">method(</span><span style="color: #e6db74">:mult</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">curry</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">three_times</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># =&gt; 12</span>
 
-<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">mult2</span><span style="color: #f8f8f2">(a)</span> <span style="color: #75715e">#test</span>
+<span style="color: #75715e"># ==================================</span>
+<span style="color: #75715e"># Second, more traditional technique</span>
+<span style="color: #75715e"># ==================================</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">mult2</span><span style="color: #f8f8f2">(a)</span>
   <span style="color: #f8f8f2">lambda</span> <span style="color: #66d9ef">do</span> <span style="color: #f92672">|</span><span style="color: #f8f8f2">b</span><span style="color: #f92672">|</span>
     <span style="color: #f8f8f2">a</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">b</span>
   <span style="color: #66d9ef">end</span>
 <span style="color: #66d9ef">end</span>
 
-<span style="color: #75715e"># Second, more traditional method</span>
-
-<span style="color: #f8f8f2">thirds2</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mult2(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>
-<span style="color: #f8f8f2">thirds2</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># =&gt; 12</span>
+<span style="color: #f8f8f2">alt_three_times</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mult2(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">alt_three_times</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># =&gt; 12</span>
 </pre></div>
 
 <h2 id="javascript">Javascript</h2>
@@ -203,8 +207,8 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
     <span style="color: #f8f8f2">}</span>
 <span style="color: #f8f8f2">}</span>
 
-<span style="color: #66d9ef">var</span> <span style="color: #a6e22e">thirds</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">mult</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">);</span>
-<span style="color: #a6e22e">thirds</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">// =&gt; 12</span>
+<span style="color: #66d9ef">var</span> <span style="color: #a6e22e">three_times</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">mult</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">three_times</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">// =&gt; 12</span>
 </pre></div>
 
   			</section>

@@ -17,7 +17,7 @@
       <pubDate>Thu, 20 Jul 2017 13:28:46 +0200</pubDate>
       
       <guid>https://benjamin-thomas.github.io/blog/post/currying/</guid>
-      <description>Ruby # First method, define as a usual method, and convert to a lambda as needed def mult(a,b) a * b end mult(3,4) # =&amp;gt; 12 method(:mult). # returns a `Method` object, which behaves as a Proc (lambda) .call(3,4) method(:mult) .curry # returns the same Proc (lambda), and allows next partial application .call(3) # apply the first partial transform thirds = method(:mult).curry.(3) thirds.(4) # =&amp;gt; 12 def mult2(a) #test lambda do |b| a * b end end # Second, more traditional method thirds2 = mult2(3) thirds2.</description>
+      <description>Ruby # ============================================================================= # First technique: define as a usual method, then convert to a lambda as needed # ============================================================================= def mult(a,b) a * b end mult(3,4) # =&amp;gt; 12 method(:mult). # returns a `Method` object, which behaves as a Proc (lambda) .call(3,4) method(:mult) .curry # returns the same Proc (lambda), and allows next partial application .call(3) # apply the first partial transform three_times = method(:mult).curry.(3) three_times.(4) # =&amp;gt; 12 # ================================== # Second, more traditional technique # ================================== def mult2(a) lambda do |b| a * b end end alt_three_times = mult2(3) alt_three_times.</description>
     </item>
     
     <item>
