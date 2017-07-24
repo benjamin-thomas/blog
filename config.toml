@@ -16,3 +16,10 @@ comments = true
   #googleAnalyticsUserID = "UA-xxxxxxxx-x"
   #domainVerification = "xxxxxxxxxxxxxxxxxxxxx"
   disqus = "benjamin-thomas-github-io"
+
+ [params.author]
+    firstName = "Benjamin"
+    lastName = "Thomas"
+    gender = "male"
+    github = "benjamin-thomas"
+    gravatarHash = "36ba49b97bcebe6efe7e507a3cd3029f"
