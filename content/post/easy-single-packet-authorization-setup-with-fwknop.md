@@ -1,7 +1,7 @@
 ---
 title: "Easy Single Packet Authorization Setup With fwknop"
 date: 2017-07-24T17:31:34+02:00
-description: For linux servers
+description: For Ubuntu 16.04 LTS
 tags: [Admin]
 ---
 
