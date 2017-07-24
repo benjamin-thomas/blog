@@ -2,7 +2,7 @@
 title: "Currying"
 date: 2017-07-20T13:28:46+02:00
 description: "Examples in ruby and javascript"
-draft: false
+tags: [Ruby, Javascript]
 ---
 
 ## Ruby
