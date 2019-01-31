@@ -1,12 +1,15 @@
 baseURL            = "https://benjamin-thomas.github.io/"
 languageCode       = "en-us"
-title              = "Notes about programming"
+title              = "Programming, etc."
 theme              = "m10c"
 PygmentsCodeFences = true
 publishDir         = "../benjamin-thomas.github.io"
 comments = true
 
+
 [params]
+  name = "Benjamin THOMAS"
+  description = " "
   # Warning Keys are case sensitives
   #Subtitle = "Your subtitle !"
   #description = "Everything is awesome !"
@@ -17,9 +20,6 @@ comments = true
   #domainVerification = "xxxxxxxxxxxxxxxxxxxxx"
   disqus = "benjamin-thomas-github-io"
 
- [params.author]
-    firstName = "Benjamin"
-    lastName = "Thomas"
-    gender = "male"
-    github = "benjamin-thomas"
-    gravatarHash = "36ba49b97bcebe6efe7e507a3cd3029f"
+[[params.social]]
+  name = "github"
+  url = "https://github.com/benjamin-thomas"
