@@ -70,3 +70,12 @@ systemctl set-default graphical.target
 # or once
 systemctl start gdm3.service
 ```
+
+## 9. Unlock gnome-keyring on login (see ~/.xinitrc)
+
+```file
+# /etc/pam.d/login
+# Add those 2 lines below  pam_group.so
+auth      optional     pam_gnome_keyring.so
+session   optional     pam_gnome_keyring.so auto_start
+```
