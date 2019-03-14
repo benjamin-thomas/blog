@@ -44,6 +44,16 @@ git clone git@github.com:benjamin-thomas/dotfiles.git && cd dotfiles
 ./create_symlinks.rb
 
 apt-get install rofi dunst thunderbird rxvt-unicode
+
+# for utt
+apt-get install python-pip
+
+apt-get install xsel # clipboard gem dependency
+gem install --user clipboard
+
+apt-get install scrot shutter # screenshots
+apt-get install feh
+apt-get install thunderbird-locale-fr # then download dictionary manually (via right clic > add dict > modules)
 ```
 
 ## 7. Install dev scripts
@@ -79,3 +89,37 @@ systemctl start gdm3.service
 auth      optional     pam_gnome_keyring.so
 session   optional     pam_gnome_keyring.so auto_start
 ```
+
+## 10. Thunderbird setup
+
+- Add sigs via Dropbox
+- disable TB spam detection (too many false positives, let the server handle it)
+- select marked spam goes to the spam folder
+- change default file explorer (which one??)
+
+## 11. Utt log in Dropbox
+
+```bash
+ln -s ~/Dropbox/PrivSync/Documents/Logs/utt.log -T ~/.local/share/utt/utt.log
+```
+
+## 12. Disable default PDF for surfing keys extension
+
+
+Type
+
+```console
+;s
+```
+
+# Disable screen saver
+
+```console
+xset -dpms s off
+```
+
+lxappearance to change default font size (first tab "widget/interface")
+gnome-tweaks > fonts > change 4th/last font param for gedit, etc. (others don't seem to do anything)
+
+apt install thunar
+apt remove nautilus
