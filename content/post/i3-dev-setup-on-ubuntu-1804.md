@@ -121,5 +121,15 @@ xset -dpms s off
 lxappearance to change default font size (first tab "widget/interface")
 gnome-tweaks > fonts > change 4th/last font param for gedit, etc. (others don't seem to do anything)
 
-apt install thunar
-apt remove nautilus
+    apt install thunar
+    apt remove nautilus
+
+---
+
+## Next: update these steps on reinstall
+
+### Install pass
+
+    apt install pass
+    ln -s ~/mysyncfolder
+    pass ls
