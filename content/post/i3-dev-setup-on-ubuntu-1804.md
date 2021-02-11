@@ -4,7 +4,7 @@ date: 2019-02-01T00:00:00+02:00
 tags: [Ubuntu, OS]
 ---
 
-Just a note to self, nothing interestring
+Just a note to self, nothing interesting
 
 ## 1. Install LVM on LUKS
 
@@ -34,7 +34,7 @@ Use the cryptfs volume to transfer the pub keys, then add them to github, bitbuc
 
 https://github.com/junegunn/fzf-bin/releases
 
-Dowload and untar the <mark>bin release</mark>, mv into ~/.local/bin
+Download and untar the <mark>bin release</mark>, mv into ~/.local/bin
 
 ## 6. Install dotfiles
 
@@ -81,7 +81,7 @@ systemctl set-default graphical.target
 systemctl start gdm3.service
 ```
 
-## 9. Unlock gnome-keyring on login (see ~/.xinitrc)
+## 9. Unlock gnome-keyring upon login (see ~/.xinitrc)
 
 ```file
 # /etc/pam.d/login
