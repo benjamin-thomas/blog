@@ -1,0 +1,11 @@
+## Rebuild with:
+
+    hugo
+
+## Run a local server with:
+
+    hugo server
+    hugo server --disableFastRender
+    hugo server --bind 192.168.1.100 --baseURL 192.168.1.100
+
+Make sure to disable cache in chrome's devtools if something's off with the assets
