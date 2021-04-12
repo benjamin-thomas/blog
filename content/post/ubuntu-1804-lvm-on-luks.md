@@ -143,3 +143,40 @@ update-grub
 Make sure `/etc/default/keyboard` is coherent.
 
 Exit chroot, then reboot!
+
+
+---
+
+## 9. User setup
+
+### Sync password store accros new PC
+
+Create a new gpg key with `seahorse` (will unlock upon signin), email=user@localhost.
+
+Then export the public key (new PC):
+
+    gpg --armor --export user@host-year > ~/Dropbox/user@host-year.pub.asc
+
+Import via `seahorse` (old PC)
+
+There seems to be a bug long standing bug (1604), if the imported key does not show up, trust manually:
+
+- gpg --edit user@host-year
+- trust
+  - choose "Ultimate"
+
+## I struggled to get the key to import (gpg vs gpg2)
+
+If seahorse does not reflect the changes, import manually next time
+
+gpg2 --import ~/Dropbox/user@host-year.pub.asc
+
+
+Add the newly available pub key `user@host-year` to: `~/.password-store/.gpg-id`
+
+Re-encrypt the password store with all the available public keys
+
+    pass init $(cat ~/.password-store/.gpg-id)
+
+
+Then delete the pub keys (not needed anymore)
